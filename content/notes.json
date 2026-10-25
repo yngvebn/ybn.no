@@ -4,15 +4,17 @@
     "number": "001",
     "project": "SendToChrome",
     "period": "2015",
-    "title": "Sending a link from Windows Phone to Chrome",
-    "intro": "SendToChrome paired a Windows Phone with a desktop browser so a link sent from the phone would open in a new tab.",
+    "title": "Getting a link onto another screen",
+    "intro": "The end result was a new browser tab. Behind it were a Windows Phone app, a Chrome extension, a web API and Google Cloud Messaging.",
     "paragraphs": [
-      "The 2015 project contains a Windows Phone app, a Chrome extension and a web API.",
-      "The phone requested a pairing code from the API. You entered that code in the Chrome extension and named the browser. The phone could then list its paired browsers and send a URL to one of them.",
-      "The extension received the URL through Google Cloud Messaging and opened it in a new tab."
+      "SendToChrome dates from 2015. It paired a Windows Phone with a named Chrome browser, using a short code to connect the two.",
+      "The phone requested that code from the API. You entered it in the Chrome extension and gave the browser a name. The phone could then list its paired browsers and send a URL to one of them.",
+      "The API routed the URL through Google Cloud Messaging. The extension received the message and opened a tab. The phone never needed a direct connection to the desktop."
     ],
     "related": [
       "trip-oracle"
-    ]
+    ],
+    "connection": "The trip website used a serverless function to return a single answer. Its October change left the function choosing among six missing responses:",
+    "connectionTitle": "Another small output with something to inspect"
   }
 ]

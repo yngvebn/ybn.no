@@ -1,17 +1,23 @@
 [
   {
     "name": "story-video",
-    "description": "Renders narrated videos from scripts.",
-    "detail": "Visuals are timed to spoken words, with several styles to choose from."
+    "description": "A caption can wait for a spoken word instead of a hard-coded second.",
+    "detail": "story-video ties visuals to the narration, then renders the result as a film. Changing the voice doesn’t require manually retiming every cue."
   },
   {
     "name": "EventMapper",
-    "description": "Maps connections between events, messages and handlers in C# code.",
-    "detail": "Uses Roslyn to follow references and build a graph."
+    "description": "A message was sent. Which handler actually runs?",
+    "detail": "Started in 2013, EventMapper follows C# references and message routes to draw connections that ordinary call navigation can miss.",
+    "connection": {
+      "label": "Compare with the agent-session dashboard",
+      "url": "https://github.com/yngvebn/agent-session-dashboard",
+      "title": "2013 → 2026: following hidden activity",
+      "reason": "EventMapper traces messages to their handlers. The later dashboard records hooks from running agents. Different systems, but both make indirect activity easier to inspect."
+    }
   },
   {
     "name": "trmnl",
-    "description": "Combines travel and household information for an e-ink display.",
-    "detail": "The display changes with the time of day and keeps cached data when a source fails."
+    "description": "On Friday afternoon, the trains make room for next week’s bin collection.",
+    "detail": "An e-ink dashboard that changes with the day and time. Each source keeps its own cache, so a failed API doesn’t have to blank the screen."
   }
 ]

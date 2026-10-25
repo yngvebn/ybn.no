@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>YBN / LAB — social image source</title>
+  <style>
+    @font-face{font-family:DM;src:url(fonts/dm-sans.woff2) format('woff2');font-weight:400 700}
+    @font-face{font-family:Instrument;src:url(fonts/instrument-serif.woff2) format('woff2')}
+    @font-face{font-family:Instrument;src:url(fonts/instrument-serif-italic.woff2) format('woff2');font-style:italic}
+    *{box-sizing:border-box}html,body{margin:0;width:1200px;height:630px;overflow:hidden;background:#171a17;color:#eeeade}
+    body{padding:48px 65px;font-family:DM,Arial,sans-serif;position:relative}
+    header{display:flex;align-items:center;gap:15px;border-bottom:1px solid #414838;padding-bottom:27px;font-size:26px;letter-spacing:-1px}
+    header svg{width:26px;height:31px;color:#f19b77}header span{color:#f19b77}header small{margin-left:auto;color:#b1b2a7;font:13px monospace;letter-spacing:1.7px}
+    h1{position:relative;z-index:1;font:400 89px/.99 Instrument,Georgia,serif;letter-spacing:-1px;margin:39px 0 0}h1 em{color:#f19b77;font-weight:400}
+    p{position:absolute;bottom:47px;left:65px;color:#c3c8b8;font-size:21px;line-height:1.6;margin:0}
+    .map{position:absolute;width:370px;height:340px;right:42px;top:140px;color:#afbca3}
+    .address{position:absolute;bottom:51px;right:65px;font:16px monospace;letter-spacing:1px;color:#f19b77}
+  </style>
+</head>
+<body>
+  <header><svg viewBox="0 0 24 28" aria-hidden="true"><path d="M3 3v6l9 10 9-10V3M12 19v7M12 0v12" fill="none" stroke="currentColor" stroke-width="1.5"/><circle cx="12" cy="15" r="2" fill="currentColor"/></svg>YBN <span>/</span> LAB <small>A PERSONAL DIGITAL WORKSHOP</small></header>
+  <h1>There’s probably<br>a pattern in here<br><em>somewhere.</em></h1>
+  <svg class="map" viewBox="0 0 370 340" aria-hidden="true">
+    <defs><pattern id="dots" width="23" height="23" patternUnits="userSpaceOnUse"><circle cx="1" cy="1" r="1" fill="currentColor" opacity=".2"/></pattern></defs><rect width="370" height="340" fill="url(#dots)"/>
+    <g fill="none" stroke="currentColor"><path d="M62 95C62 176 277 150 277 231C160 231 151 284 70 284" opacity=".6"/><path d="M277 231C347 231 340 91 288 73" opacity=".6"/><path d="M62 95C110 22 251 20 288 73M70 284C24 220 31 149 62 95" stroke-dasharray="3 7" opacity=".3"/><circle cx="277" cy="231" r="30" opacity=".3"/><circle cx="277" cy="231" r="50" opacity=".15"/></g>
+    <g fill="#c6c2b6"><circle cx="62" cy="95" r="5"/><circle cx="288" cy="73" r="5"/><circle cx="70" cy="284" r="5"/></g><circle cx="277" cy="231" r="7" fill="#f19b77"/>
+    <g fill="currentColor" font-family="monospace" font-size="12" letter-spacing="1"><text x="78" y="90">A LINK</text><text x="169" y="51">A CONVERSATION</text><text x="86" y="306">A MUSICAL NOTE</text></g>
+  </svg>
+  <p>An unreasonable amount of infrastructure.<br>For a collection of questionable ideas.</p>
+  <span class="address">ybn.no ↗</span>
+</body>
+</html>

@@ -39,9 +39,21 @@ test('the three exhibits and field note are available before JavaScript runs', (
 test('public references do not expose private repositories or local paths', () => {
   for (const match of html.matchAll(/href="(https:\/\/github\.com\/[^"\s]+)"/g)) {
     const url = new URL(match[1]);
-    assert.ok(url.pathname === '/yngvebn' || url.pathname.startsWith('/yngvebn/erdettidforguttetur.no'), `Review public reference: ${url}`);
+    assert.ok(url.pathname === '/yngvebn' || url.pathname === '/yngvebn/agent-session-dashboard' || url.pathname.startsWith('/yngvebn/erdettidforguttetur.no'), `Review public reference: ${url}`);
   }
   assert.doesNotMatch(html, /\/workspace\/|C:\\\\|\.env\b|PRIVATE KEY|client_secret|api[_-]key/i);
+});
+
+test('social cards reference the actual, deployable 1200 × 630 PNG', async () => {
+  const png = await readFile(new URL('../og.png', import.meta.url));
+  assert.equal(png.subarray(0, 8).toString('hex'), '89504e470d0a1a0a');
+  assert.equal(png.readUInt32BE(16), 1200);
+  assert.equal(png.readUInt32BE(20), 630);
+  assert.match(html, /property="og:image" content="https:\/\/ybn\.no\/og\.png"/);
+  assert.match(html, /name="twitter:card" content="summary_large_image"/);
+  assert.match(html, /name="twitter:image" content="https:\/\/ybn\.no\/og\.png"/);
+  const dockerfile = await readFile(new URL('../Dockerfile', import.meta.url), 'utf8');
+  assert.match(dockerfile, /COPY og\.png \/usr\/share\/nginx\/html\/og\.png/);
 });
 
 test('rebuilding does not change the committed deployment artifact', async () => {

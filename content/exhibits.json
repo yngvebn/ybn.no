@@ -2,17 +2,17 @@
   {
     "id": "trip-oracle",
     "number": "01",
-    "kind": "A website about a trip",
+    "kind": "A trip, postponed",
     "title": "Er det tid for guttetur?",
     "subtitle": "Is it time for a boys’ trip?",
     "state": "Preserved",
     "period": "2021",
-    "lead": "Seven versions of “no,” chosen at random. In October 2021, I changed the answer to “yes,” then fixed the array index.",
-    "storyTitle": "Seven answers became one.",
+    "lead": "Seven ways to say “no” became one “Ja!” The answer changed before the random index did.",
+    "storyTitle": "Yes, with an indexing problem.",
     "paragraphs": [
-      "The March 2021 version picked a response at random from a list of seven. They included “Nope,” “Helst ikke” and “Kanskje vente til pandemien er over?”",
-      "On 27 October, I replaced the list with “Ja!” but left the random index calculation unchanged. It still selected a position from zero to six, so most positions no longer contained an answer. The next commit set the index to zero.",
-      "The version here lets you switch between March and October. It cycles through the earlier responses instead of choosing randomly."
+      "The March 2021 website picked from seven responses to “Is it time for a boys’ trip?” “Nope,” “Helst ikke” and “Kanskje vente til pandemien er over?” gave a fairly consistent answer.",
+      "On 27 October, I replaced the list with “Ja!” The code still picked a position from zero to six. There was now an answer at position zero and nothing in the other six.",
+      "The next commit set the index to zero. The recorded commit times are 69 seconds apart. You can inspect the gap below; the larger recreation cycles through the March and October responses."
     ],
     "link": {
       "label": "View the repository",
@@ -31,7 +31,15 @@
     "related": [
       "send-to-chrome"
     ],
-    "connection": "Also from the archive:"
+    "connection": "A one-word answer needed a serverless function. Sending a URL to Chrome took an app, extension, API and messaging service. Follow that route:",
+    "connectionTitle": "Small outputs, several parts",
+    "history": {
+      "changedAt": "2021-10-27T14:35:56Z",
+      "fixedAt": "2021-10-27T14:37:05Z",
+      "before": "const text = Math.floor(Math.random() * 7);",
+      "after": "const text = 0;",
+      "response": "Ja!"
+    }
   },
   {
     "id": "retrospective",
@@ -41,44 +49,38 @@
     "subtitle": "Every retro remembers the last one.",
     "state": "Alive",
     "period": "Started in 2017",
-    "lead": "An online tool for team retrospectives, with notes and actions that carry from one session to the next.",
+    "lead": "A team can agree to change something, then have the same conversation a month later. Retrospective.fun keeps earlier notes and actions within reach.",
     "storyTitle": "Keeping track between meetings",
     "paragraphs": [
-      "I started Retrospective.fun in 2017 and still work on it. It keeps the notes and actions from a retrospective available when the team meets again.",
-      "Teams can choose a meeting format, group what people wrote, record actions and refer back to earlier discussions. Formats such as Sailboat and Six Thinking Hats each have their own sequence."
+      "I started Retrospective.fun in 2017 and still work on it. A retrospective is a meeting about how a team works. The useful part is often what people agree to do afterwards.",
+      "The application keeps those notes and actions available at the next session. Teams can group what people wrote, revisit earlier discussions and choose formats such as Sailboat or Six Thinking Hats, each with its own sequence."
     ],
     "link": {
       "label": "Visit Retrospective.fun",
       "url": "https://retrospective.fun"
     },
     "sources": [],
-    "related": [
-      "notequest"
-    ],
-    "connection": "Also in the collection:"
+    "related": []
   },
   {
     "id": "notequest",
     "number": "03",
     "kind": "Learning to read music",
     "title": "NoteGame → NoteQuest",
-    "subtitle": "My daughter’s game, from an idea I tried in 2023.",
+    "subtitle": "My daughter picked up an idea I’d left unfinished.",
     "state": "Alive",
     "period": "Original experiment: 2023",
-    "lead": "My daughter develops NoteQuest with AI assistance. I look after the backend and hosting.",
+    "lead": "I got as far as notes on a staff and a choice of answers. My daughter built NoteQuest from that idea; she develops the game, and I look after the backend and hosting.",
     "storyTitle": "From NoteGame to NoteQuest",
     "paragraphs": [
-      "In 2023, I tried building a game for learning to read notes. NoteGame showed a note on a staff and asked you to pick the right answer. I left it unfinished.",
-      "A few years later, my daughter took up the idea and built NoteQuest using AI-assisted development. She develops the game; I provide the backend, hosting and engineering support."
+      "In 2023, I started NoteGame to practise reading music. It showed a note on a staff and asked you to pick the right answer. I left it unfinished.",
+      "A few years later, my daughter took up the idea and built NoteQuest using AI-assisted development. She develops the game; I provide the backend, hosting and engineering support. You can play her version now."
     ],
     "link": {
       "label": "Play NoteQuest",
       "url": "https://notequest.no/"
     },
     "sources": [],
-    "related": [
-      "retrospective"
-    ],
-    "connection": "Also in the collection:"
+    "related": []
   }
 ]

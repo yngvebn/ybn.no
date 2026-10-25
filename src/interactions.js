@@ -42,6 +42,12 @@ function revealHash() {
   if (!target) return;
   if (target.matches('.exhibit')) target.querySelector('details').open = true;
   if (target.matches('.field-note')) target.querySelector('details').open = true;
+  // A deep link can also point at the commit artifact inside a closed story.
+  let disclosure = target.closest('details');
+  while (disclosure) {
+    disclosure.open = true;
+    disclosure = disclosure.parentElement.closest('details');
+  }
 }
 
 document.querySelectorAll('[data-connection]').forEach((link) => {
@@ -57,3 +63,36 @@ document.querySelectorAll('[data-connection]').forEach((link) => {
 });
 window.addEventListener('hashchange', revealHash);
 revealHash();
+
+// Inspect the response array between the two public October commits. This is
+// local, deterministic inspection, not a request to the historical service.
+const gap = document.querySelector('.gap-controls');
+if (gap) {
+  gap.hidden = false;
+  const slots = [...gap.querySelectorAll('[data-index]')];
+  const result = gap.querySelector('.gap-result');
+  const fix = gap.querySelector('.gap-fix');
+  let selected = 0;
+  let fixed = false;
+  function inspect() {
+    for (const slot of slots) {
+      slot.setAttribute('aria-pressed', String(Number(slot.dataset.index) === selected));
+      slot.disabled = fixed && Number(slot.dataset.index) !== 0;
+    }
+    result.textContent = fixed
+      ? 'The fix always selects position 0. “Ja!” every time.'
+      : selected === 0 ? 'Position 0 returns “Ja!”' : `Position ${selected} has no response to return.`;
+    fix.setAttribute('aria-pressed', String(fixed));
+    fix.classList.toggle('is-fixed', fixed);
+    fix.firstChild.textContent = fixed ? 'Undo the fix ' : 'Try the next commit ';
+  }
+  for (const slot of slots) slot.addEventListener('click', () => {
+    selected = Number(slot.dataset.index);
+    inspect();
+  });
+  fix.addEventListener('click', () => {
+    fixed = !fixed;
+    if (fixed) selected = 0;
+    inspect();
+  });
+}
