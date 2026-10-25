@@ -1,0 +1,5 @@
+[
+  { "name": "story-video", "description": "Words become timing cues. Scripts become narrated films.", "detail": "A rendering engine with several ways of telling the same story." },
+  { "name": "EventMapper", "description": "Following the paths between events, messages and handlers.", "detail": "A long-running attempt to see connections hidden inside software." },
+  { "name": "trmnl", "description": "Scattered information, one quiet e-ink screen.", "detail": "Deciding what deserves a little space, and when it should make room." }
+]
