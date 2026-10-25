@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ybn.no</title>
+  <meta name="description" content="Yngve Bakken-Nilsen">
+  <style>
+    :root {
+      --bg: #fafaf9;
+      --fg: #1c1917;
+      --muted: #78716c;
+    }
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #0c0a09;
+        --fg: #f5f5f4;
+        --muted: #a8a29e;
+      }
+    }
+    * { box-sizing: border-box; }
+    html, body { height: 100%; margin: 0; }
+    body {
+      display: grid;
+      place-items: center;
+      padding: 16px;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    }
+    main { text-align: center; }
+    h1 {
+      margin: 0 0 0.5rem;
+      font-size: clamp(2.5rem, 8vw, 4rem);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+    }
+    p { margin: 0; color: var(--muted); }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>ybn.no</h1>
+    <p>Yngve Bakken-Nilsen</p>
+  </main>
+</body>
+</html>
