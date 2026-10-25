@@ -1,5 +1,17 @@
 [
-  { "name": "story-video", "description": "Words become timing cues. Scripts become narrated films.", "detail": "A rendering engine with several ways of telling the same story." },
-  { "name": "EventMapper", "description": "Following the paths between events, messages and handlers.", "detail": "A long-running attempt to see connections hidden inside software." },
-  { "name": "trmnl", "description": "Scattered information, one quiet e-ink screen.", "detail": "Deciding what deserves a little space, and when it should make room." }
+  {
+    "name": "story-video",
+    "description": "Renders narrated videos from scripts.",
+    "detail": "Visuals are timed to spoken words, with several styles to choose from."
+  },
+  {
+    "name": "EventMapper",
+    "description": "Maps connections between events, messages and handlers in C# code.",
+    "detail": "Uses Roslyn to follow references and build a graph."
+  },
+  {
+    "name": "trmnl",
+    "description": "Combines travel and household information for an e-ink display.",
+    "detail": "The display changes with the time of day and keeps cached data when a source fails."
+  }
 ]

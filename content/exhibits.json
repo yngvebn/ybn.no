@@ -2,64 +2,83 @@
   {
     "id": "trip-oracle",
     "number": "01",
-    "kind": "A very small public service",
+    "kind": "A website about a trip",
     "title": "Er det tid for guttetur?",
     "subtitle": "Is it time for a boys’ trip?",
     "state": "Preserved",
     "period": "2021",
-    "lead": "A pandemic-era oracle with seven ways to say no. Eventually, it learned one way to say yes.",
-    "storyTitle": "A distributed system for saying no.",
+    "lead": "Seven versions of “no,” chosen at random. In October 2021, I changed the answer to “yes,” then fixed the array index.",
+    "storyTitle": "Seven answers became one.",
     "paragraphs": [
-      "In March 2021, a small website answered a very specific question: was it time for a boys’ trip? A serverless function picked from seven variations of no. The interface did not offer much room for negotiation.",
-      "On 27 October, the list of answers changed to a single “Ja!” There was one small complication: the random selection still expected seven answers. The next commit changed the index to zero.",
-      "Two commits, one change of outlook, and a remarkably small API. The site served its purpose. This recreation cycles through the seven historical responses so you can find them all. It is not current travel advice."
+      "The March 2021 version picked a response at random from a list of seven. They included “Nope,” “Helst ikke” and “Kanskje vente til pandemien er over?”",
+      "On 27 October, I replaced the list with “Ja!” but left the random index calculation unchanged. It still selected a position from zero to six, so most positions no longer contained an answer. The next commit set the index to zero.",
+      "The version here lets you switch between March and October. It cycles through the earlier responses instead of choosing randomly."
     ],
-    "link": { "label": "Inspect the original", "url": "https://github.com/yngvebn/erdettidforguttetur.no" },
+    "link": {
+      "label": "View the repository",
+      "url": "https://github.com/yngvebn/erdettidforguttetur.no"
+    },
     "sources": [
-      { "label": "The answer changes", "url": "https://github.com/yngvebn/erdettidforguttetur.no/commit/700e26861ded1dd9f3af5b95d7749ca77dc370e1" },
-      { "label": "Then the index catches up", "url": "https://github.com/yngvebn/erdettidforguttetur.no/commit/a291268fe7fd8b0eaae587396f479071955aca51" }
+      {
+        "label": "Change the response to “Ja!”",
+        "url": "https://github.com/yngvebn/erdettidforguttetur.no/commit/700e26861ded1dd9f3af5b95d7749ca77dc370e1"
+      },
+      {
+        "label": "Fix the array index",
+        "url": "https://github.com/yngvebn/erdettidforguttetur.no/commit/a291268fe7fd8b0eaae587396f479071955aca51"
+      }
     ],
-    "related": ["send-to-chrome"],
-    "connection": "Related specimen: another small task that acquired several moving parts."
+    "related": [
+      "send-to-chrome"
+    ],
+    "connection": "Also from the archive:"
   },
   {
     "id": "retrospective",
     "number": "02",
-    "kind": "An experiment that stayed alive",
+    "kind": "Team retrospectives",
     "title": "Retrospective.fun",
     "subtitle": "Every retro remembers the last one.",
     "state": "Alive",
     "period": "Started in 2017",
-    "lead": "Teams have conversations. Then another sprint happens. This one tries to keep the useful bits from disappearing between meetings.",
-    "storyTitle": "Some things are worth bringing up again.",
+    "lead": "An online tool for team retrospectives, with notes and actions that carry from one session to the next.",
+    "storyTitle": "Keeping track between meetings",
     "paragraphs": [
-      "A retrospective is a chance for a team to pause, talk about what happened, and decide what to do differently. The conversation can be useful. Remembering what came out of it is another matter.",
-      "Retrospective.fun is a living application built around that gap: structured conversations, action items, and context carried from one session to the next. Different retrospective formats get their own sequence instead of being squeezed into the same meeting.",
-      "Development began in 2017. The experiment is still evolving. The question underneath it remains fairly small: what would change if the next conversation remembered the previous one?"
+      "I started Retrospective.fun in 2017 and still work on it. It keeps the notes and actions from a retrospective available when the team meets again.",
+      "Teams can choose a meeting format, group what people wrote, record actions and refer back to earlier discussions. Formats such as Sailboat and Six Thinking Hats each have their own sequence."
     ],
-    "link": { "label": "Visit Retrospective.fun", "url": "https://retrospective.fun" },
+    "link": {
+      "label": "Visit Retrospective.fun",
+      "url": "https://retrospective.fun"
+    },
     "sources": [],
-    "related": ["notequest"],
-    "connection": "Another kind of continuity: an unfinished idea picked up by another developer."
+    "related": [
+      "notequest"
+    ],
+    "connection": "Also in the collection:"
   },
   {
     "id": "notequest",
     "number": "03",
-    "kind": "An idea with a second life",
+    "kind": "Learning to read music",
     "title": "NoteGame → NoteQuest",
-    "subtitle": "Same curiosity. Another pair of hands.",
+    "subtitle": "My daughter’s game, from an idea I tried in 2023.",
     "state": "Alive",
     "period": "Original experiment: 2023",
-    "lead": "I started a note-reading game. A few years later, my daughter took the idea further. She builds the game. I help with the machinery underneath.",
-    "storyTitle": "An unfinished idea is not always an ending.",
+    "lead": "My daughter develops NoteQuest with AI assistance. I look after the backend and hosting.",
+    "storyTitle": "From NoteGame to NoteQuest",
     "paragraphs": [
-      "The first experiment was NoteGame: notes on a staff, a choice of answers, a few points for getting them right. It stayed an experiment.",
-      "My daughter subsequently took the idea further as NoteQuest, using AI-assisted development. She develops the game; I provide the backend, infrastructure, and heavier engineering support.",
-      "It is her implementation of an idea we now share. The original did not need a grand plan for a revival. It needed another developer who wanted to make something of it."
+      "In 2023, I tried building a game for learning to read notes. NoteGame showed a note on a staff and asked you to pick the right answer. I left it unfinished.",
+      "A few years later, my daughter took up the idea and built NoteQuest using AI-assisted development. She develops the game; I provide the backend, hosting and engineering support."
     ],
-    "link": { "label": "Play NoteQuest", "url": "https://notequest.no/" },
+    "link": {
+      "label": "Play NoteQuest",
+      "url": "https://notequest.no/"
+    },
     "sources": [],
-    "related": ["retrospective"],
-    "connection": "A shared thread: carrying something useful into what comes next."
+    "related": [
+      "retrospective"
+    ],
+    "connection": "Also in the collection:"
   }
 ]

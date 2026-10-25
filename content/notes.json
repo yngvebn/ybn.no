@@ -3,16 +3,16 @@
     "id": "send-to-chrome",
     "number": "001",
     "project": "SendToChrome",
-    "period": "From the 2015 drawer",
-    "title": "A link needed to reach another screen. Several applications were involved.",
-    "intro": "A Windows Phone app. A Chrome extension. A pairing flow. A web API. At the other end of all that: a new browser tab.",
+    "period": "2015",
+    "title": "Sending a link from Windows Phone to Chrome",
+    "intro": "SendToChrome paired a Windows Phone with a desktop browser so a link sent from the phone would open in a new tab.",
     "paragraphs": [
-      "SendToChrome was a 2015 experiment in getting a URL from a Windows Phone to a desktop browser. The repository contains both clients and the web API between them. A short README manages to make the whole thing sound much smaller than it is.",
-      "The phone requested a pairing code. In the browser, a person entered that code and gave the browser instance a name. The system could then associate the device with its browsers and route a URL to a selected instance.",
-      "The Chrome extension listened for a Google Cloud Messaging event. When one arrived, it opened the URL in a new tab. A pleasantly ordinary result at the end of a rather elaborate journey.",
-      "That flow is visible in the implementation. Whether every part worked reliably in daily use is not established by the surviving code. This is a preserved mechanism, not a claim of a successful product. The original reason for building it is a story the code does not tell."
+      "The 2015 project contains a Windows Phone app, a Chrome extension and a web API.",
+      "The phone requested a pairing code from the API. You entered that code in the Chrome extension and named the browser. The phone could then list its paired browsers and send a URL to one of them.",
+      "The extension received the URL through Google Cloud Messaging and opened it in a new tab."
     ],
-    "aside": "The smallest result in the system was the thing it was built to move.",
-    "related": ["trip-oracle"]
+    "related": [
+      "trip-oracle"
+    ]
   }
 ]

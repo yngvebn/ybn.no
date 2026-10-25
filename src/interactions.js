@@ -31,7 +31,7 @@ document.querySelectorAll('input[name="era"]').forEach((input) => {
     era = input.value;
     index = 0;
     artifact.classList.toggle('oracle-yes', era === 'october');
-    eraLabel.textContent = era === 'october' ? 'THE ONE-ANSWER ERA' : 'THE SEVEN-ANSWER ERA';
+    eraLabel.textContent = era === 'october' ? 'OCTOBER VERSION' : 'MARCH VERSION';
     showAnswer();
   });
 });
