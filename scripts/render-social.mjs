@@ -8,7 +8,7 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
 const { chromium } = await import(process.env.PLAYWRIGHT_MODULE || 'playwright');
 let source = await readFile(join(root, 'src/social-preview.html'), 'utf8');
-for (const name of ['dm-sans', 'instrument-serif', 'instrument-serif-italic']) {
+for (const name of ['schibsted-grotesk']) {
   const font = await readFile(join(root, 'src/fonts', `${name}.woff2`));
   source = source.replaceAll(`fonts/${name}.woff2`, `data:font/woff2;base64,${font.toString('base64')}`);
 }

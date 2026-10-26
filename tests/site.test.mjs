@@ -7,13 +7,20 @@ import { fileURLToPath } from 'node:url';
 const root = fileURLToPath(new URL('../', import.meta.url));
 execFileSync(process.execPath, ['scripts/build.mjs'], { cwd: root });
 const html = await readFile(new URL('../index.html', import.meta.url), 'utf8');
+const projects = JSON.parse(await readFile(new URL('../content/projects.json', import.meta.url), 'utf8'));
 
 test('the deployment artifact is self-contained and needs no runtime services', () => {
-  assert.doesNotMatch(html, /FONT:|<script[^>]+src=|<link[^>]+rel="stylesheet"|@import|\bfetch\(/);
+  assert.doesNotMatch(html, /FONT:|<script\b|<link[^>]+rel="stylesheet"|@import|\bfetch\(/);
   for (const match of html.matchAll(/(?:src|href)="([^"]+)"/g)) {
-    assert.match(match[1], /^(?:#|https:\/\/|data:)/, `Unexpected asset dependency: ${match[1]}`);
+    assert.match(match[1], /^(?:#|https:\/\/|data:)/, `Unexpected asset dependency: ${match[1].slice(0, 60)}`);
   }
   assert.ok(Buffer.byteLength(html) < 250_000, 'Keep the entire release below 250 kB');
+});
+
+test('every embedded font is a real WOFF2 file', () => {
+  const fonts = [...html.matchAll(/url\('data:font\/woff2;base64,([^']+)'\)/g)];
+  assert.equal(fonts.length, 3);
+  for (const [, data] of fonts) assert.equal(Buffer.from(data, 'base64').subarray(0, 4).toString('ascii'), 'wOF2');
 });
 
 test('all internal anchors work and all document IDs are unique', () => {
@@ -24,9 +31,12 @@ test('all internal anchors work and all document IDs are unique', () => {
   }
 });
 
-test('the three exhibits and field note are available before JavaScript runs', () => {
-  assert.equal((html.match(/class="exhibit"/g) ?? []).length, 3);
-  assert.match(html, /id="send-to-chrome"/);
+test('the timeline lists every project, newest year first', () => {
+  const years = [...html.matchAll(/<h2 class="year[^"]*" id="year-(\d{4})">/g)].map((match) => Number(match[1]));
+  assert.deepEqual(years, [...years].sort((a, b) => b - a));
+  assert.deepEqual(new Set(years), new Set(projects.map((p) => p.year)));
+  assert.equal((html.match(/<article class="entry/g) ?? []).length, projects.length);
+  for (const project of projects) assert.match(html, new RegExp(`id="${project.id}"`));
   assert.match(html, /https:\/\/retrospective\.fun/);
   assert.match(html, /https:\/\/notequest\.no\//);
   assert.match(html, /she develops the game/);
@@ -34,6 +44,10 @@ test('the three exhibits and field note are available before JavaScript runs', (
   assert.match(html, /<html lang="en">/);
   assert.match(html, /<link rel="canonical" href="https:\/\/ybn\.no\/">/);
   assert.match(html, /prefers-reduced-motion:reduce/);
+});
+
+test('screenshots have alternative text', () => {
+  for (const match of html.matchAll(/<img\b[^>]*>/g)) assert.match(match[0], /\salt="[^"]{10,}"/);
 });
 
 test('public references do not expose private repositories or local paths', () => {
