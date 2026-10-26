@@ -53,7 +53,7 @@ test('screenshots have alternative text', () => {
 test('public references do not expose private repositories or local paths', () => {
   for (const match of html.matchAll(/href="(https:\/\/github\.com\/[^"\s]+)"/g)) {
     const url = new URL(match[1]);
-    assert.ok(url.pathname === '/yngvebn' || url.pathname === '/yngvebn/agent-session-dashboard' || url.pathname.startsWith('/yngvebn/erdettidforguttetur.no'), `Review public reference: ${url}`);
+    assert.ok(url.pathname === '/yngvebn' || url.pathname === '/yngvebn/agent-session-dashboard' || url.pathname === '/yngvebn/Chess' || url.pathname.startsWith('/yngvebn/erdettidforguttetur.no'), `Review public reference: ${url}`);
   }
   assert.doesNotMatch(html, /\/workspace\/|C:\\\\|\.env\b|PRIVATE KEY|client_secret|api[_-]key/i);
 });

@@ -235,7 +235,7 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 .meta{color:var(--muted);margin-bottom:6px}
 .state{font-weight:500}
 .state-running{color:var(--accent)}
-.entry h3{font-size:clamp(32px,3.6vw,50px);font-weight:800;letter-spacing:-.035em;line-height:1}
+.entry h3{font-size:clamp(32px,3.6vw,50px);font-weight:800;letter-spacing:-.035em;line-height:1;overflow-wrap:break-word}
 .entry-compact h3{font-size:clamp(28px,3vw,40px);letter-spacing:-.03em;line-height:1.05}
 .subtitle{margin-top:10px;color:var(--muted)}
 .lead{margin-top:20px;font-size:20px;line-height:1.5}
@@ -288,7 +288,7 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 <div class="page"><header class="site-header"><a class="wordmark" href="#main">ybn.no</a><nav aria-label="Main"><a href="#projects">Projects</a><a href="https://github.com/yngvebn">GitHub</a></nav></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><h1 id="hero-title">There’s probably a pattern in here somewhere.</h1><p class="tagline">My personal software projects, from 2013 to now. Some are still running. Most use more infrastructure than they needed.</p></section>
 <div class="timeline" id="projects" aria-label="Projects by year, newest first">
-<section class="year-row" id="y2026" aria-labelledby="year-2026"><h2 class="year" id="year-2026">2026</h2><div class="entries"><article class="entry entry-compact" id="story-video" aria-labelledby="title-story-video">
+<section class="year-row" id="y2026" aria-labelledby="year-2026"><h2 class="year year-running" id="year-2026">2026</h2><div class="entries"><article class="entry entry-compact" id="story-video" aria-labelledby="title-story-video">
 <h3 id="title-story-video">story-video</h3>
 <p class="lead">Renders narrated films with captions and visuals timed to the spoken words instead of fixed timestamps.</p>
 <p class="body">Changing the voice doesn’t mean retiming every cue by hand.</p>
@@ -296,6 +296,15 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 
 
 
+
+</article><article class="entry entry-compact" id="mavis" aria-labelledby="title-mavis">
+<p class="meta"><span class="state state-running">Still running</span> · Agent workbench</p><h3 id="title-mavis">mavis</h3>
+<p class="lead">A chat agent that can edit its own code. It started on 16 September 2026 as a Mastra server with a two-pane React page, and it’s now my main tool at work for reviewing pull requests and planning Linear issues.</p>
+<p class="body">Each pull request gets its own workspace and worktree. A review runs in three passes: explain the change, find problems, then write a guided tour of the code. Nothing reaches GitHub until I submit it. The repository had 808 commits by 26 October.</p>
+
+
+
+<p class="body">Related: <a href="#agent-session-dashboard">the agent-session dashboard (2026)</a>, which records hook events from running agents.</p>
 
 </article><article class="entry entry-compact" id="trmnl" aria-labelledby="title-trmnl">
 <h3 id="title-trmnl">trmnl</h3>
@@ -315,6 +324,15 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 
 <p class="body">Related: <a href="#eventmapper">EventMapper (2013)</a>, which follows C# message routes to their handlers.</p>
 <p class="action"><a href="https://github.com/yngvebn/agent-session-dashboard">View the repository <span aria-hidden="true">→</span></a></p>
+</article><article class="entry entry-compact" id="ng-annotate" aria-labelledby="title-ng-annotate">
+<p class="meta">Angular dev tool</p><h3 id="title-ng-annotate">ng-annotate</h3>
+<p class="lead">Click a component in a running Angular app and type an instruction. An AI agent picks it up over MCP, edits the files and resolves the note, and the browser reloads with the change.</p>
+<p class="body">One ng add command sets up the overlay, a dev-server builder and the MCP configuration. The idea comes from agentation.dev. I published 50 versions to npm in the first ten days.</p>
+
+
+
+
+<p class="action"><a href="https://www.npmjs.com/package/@ng-annotate/angular">View on npm <span aria-hidden="true">→</span></a></p>
 </article></div></section>
 <section class="year-row" id="y2023" aria-labelledby="year-2023"><h2 class="year year-running" id="year-2023">2023</h2><div class="entries"><article class="entry" id="notequest" aria-labelledby="title-notequest">
 <p class="meta"><span class="state state-running">Still running</span> · Learning to read music</p><h3 id="title-notequest">NoteGame to NoteQuest</h3>
@@ -336,8 +354,8 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 
 <p class="action"><a href="https://github.com/yngvebn/erdettidforguttetur.no">View the repository <span aria-hidden="true">→</span></a></p>
 </article></div></section>
-<section class="year-row" id="y2017" aria-labelledby="year-2017"><h2 class="year year-running" id="year-2017">2017</h2><div class="entries"><article class="entry" id="retrospective" aria-labelledby="title-retrospective">
-<p class="meta"><span class="state state-running">Still running</span> · Team retrospectives</p><h3 id="title-retrospective">Retrospective.fun</h3>
+<section class="year-row" id="y2017" aria-labelledby="year-2017"><h2 class="year year-running" id="year-2017">2017</h2><div class="entries"><article class="entry entry-compact" id="retrospective" aria-labelledby="title-retrospective">
+<p class="meta"><span class="state state-running">Still running</span> · Team retrospectives</p><h3 id="title-retrospective">Retrospective.<wbr>fun</h3>
 <p class="lead">A team can agree to change something, then have the same conversation a month later. Retrospective.fun keeps earlier notes and actions within reach.</p>
 <p class="body">Teams can group what people wrote, revisit earlier discussions and choose formats such as Sailboat or Six Thinking Hats, each with its own sequence.</p>
 
@@ -345,8 +363,36 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 
 
 <p class="action"><a href="https://retrospective.fun">Visit Retrospective.fun <span aria-hidden="true">→</span></a></p>
+</article><article class="entry entry-compact" id="gitbuddy" aria-labelledby="title-gitbuddy">
+<p class="meta"><span class="state">Never deployed</span> · Pull request bot</p><h3 id="title-gitbuddy">gitbuddy</h3>
+<p class="lead">A bot for GitHub pull requests. It started as a rule engine that set pass or fail statuses, and ended up taking instructions in pull request comments. It never went online; I ran it locally.</p>
+<p class="body">One example rule failed a pull request labelled for master unless it actually targeted master. In April 2018 I added a .NET Core parser for comments such as “@gitbuddy merge this when all checks are green” and “@gitbuddy block this until 1st of april”.</p><p class="body">On 4 April 2018 it merged a pull request in a test repository, with the commit message “Merged by Gitbuddy.io” and the description “Because you told me so”. The history stops the same day.</p>
+
+
+
+<p class="body">Related: <a href="#pull-request-notifications">Pull Request Notifications (2016)</a>, which counts open pull requests on the Chrome toolbar.</p>
+
 </article></div></section>
-<section class="year-row" id="y2015" aria-labelledby="year-2015"><h2 class="year" id="year-2015">2015</h2><div class="entries"><article class="entry" id="send-to-chrome" aria-labelledby="title-send-to-chrome">
+<section class="year-row" id="y2016" aria-labelledby="year-2016"><h2 class="year year-running" id="year-2016">2016</h2><div class="entries"><article class="entry" id="pull-request-notifications" aria-labelledby="title-pull-request-notifications">
+<p class="meta"><span class="state state-running">Still running</span> · Chrome extension</p><h3 id="title-pull-request-notifications">Pull Request Notifications</h3>
+<p class="lead">Counts open pull requests on the Chrome toolbar and lists them in a popup. I still use it, and so do some of my colleagues.</p>
+<p class="body">The repository’s 2016 history is a single day in March. It barely changed after that until August 2025, when I rebuilt it in Angular over two days and moved its polling to Chrome alarms.</p><p class="body">In 2026 the Chrome Web Store removed it after a trademark complaint about the word GitHub in its old name, Github Notifications. It came back as Pull Request Notifications with a new extension ID, so existing users had to install it again.</p>
+
+
+
+<p class="body">Related: <a href="#send-to-chrome">SendToChrome (2015)</a>, an earlier Chrome extension that opened links sent from a phone.</p>
+<p class="action"><a href="https://chromewebstore.google.com/detail/pull-request-notification/aneamgfghelnopklkcdcocglnkokpmmp">Install from the Chrome Web Store <span aria-hidden="true">→</span></a></p>
+</article></div></section>
+<section class="year-row" id="y2015" aria-labelledby="year-2015"><h2 class="year" id="year-2015">2015</h2><div class="entries"><article class="entry entry-compact" id="klassequizen" aria-labelledby="title-klassequizen">
+<p class="meta"><span class="state">Ended in 2025</span> · Live quiz for NRK</p><h3 id="title-klassequizen" lang="nb">Klassequizen</h3>
+<p class="lead">The software behind NRK’s TV quiz for tenth-grade classes. Teams answer on their own screens, while scores, clocks and answers go to the broadcast graphics as the round plays out.</p>
+<p class="body">The show started in 2013 on an earlier system. I started a rewrite on my own for Aurum in November 2015 and worked on it every year until the show ended in 2025. One of the last commits, in March 2025, is called “curtain call”.</p>
+
+
+<details class="story"><summary>Rehearsing without a studio</summary><p>A live show can’t be rehearsed whenever you like, so small tools stood in for it. One connected any number of simulated teams that answered at different speeds. Another took the place of the graphics system and showed every message it received. A third replayed the graphics messages from a logged time window.</p></details>
+
+
+</article><article class="entry entry-compact" id="send-to-chrome" aria-labelledby="title-send-to-chrome">
 <p class="meta">SendToChrome</p><h3 id="title-send-to-chrome">Getting a link onto another screen</h3>
 <p class="lead">Sending a link from a Windows Phone to Chrome took four parts: a phone app, a Chrome extension, a web API and Google Cloud Messaging.</p>
 
@@ -356,7 +402,26 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 
 
 </article></div></section>
-<section class="year-row" id="y2013" aria-labelledby="year-2013"><h2 class="year" id="year-2013">2013</h2><div class="entries"><article class="entry" id="eventmapper" aria-labelledby="title-eventmapper">
+<section class="year-row" id="y2014" aria-labelledby="year-2014"><h2 class="year" id="year-2014">2014</h2><div class="entries"><article class="entry" id="organizer" aria-labelledby="title-organizer">
+<p class="meta">Home media library</p><h3 id="title-organizer">Organizer</h3>
+<p class="lead">A web page for the movies and TV shows on my home server. A console app indexed the .nfo files next to each movie and fetched ratings from The Movie Database and show details from TheTVDB.</p>
+<p class="body">Posters come in every colour, so the server checked the pixels under each title and chose near-black or near-white text, whichever suited most of them.</p>
+<ol class="chain"><li>git push</li><li>GitHub webhook</li><li>SignalR UpdateHub</li><li>update.ps1 → restart</li></ol>
+
+<details class="story"><summary>How it updated itself</summary><p>A push to GitHub called a webhook on the web app, which called an UpdateHub on the home server over SignalR. The hub waited five seconds in a loop that watched a Stopwatch, started update.ps1 and exited with code 99. The script pulled the repository, restored NuGet packages, rebuilt with MSBuild, ran the Entity Framework migrations and started the server again.</p><p>The same mechanism appears first in a separate public repository, AutoUpdate: 12 commits between 13:28 and 13:47 UTC on 21 March 2014, most of them called “test” or “Update Program.cs”. Organizer got its webhook that evening.</p></details>
+
+
+</article></div></section>
+<section class="year-row" id="y2013" aria-labelledby="year-2013"><h2 class="year" id="year-2013">2013</h2><div class="entries"><article class="entry entry-compact" id="chess" aria-labelledby="title-chess">
+<p class="meta">Patterns and practices</p><h3 id="title-chess">Chess</h3>
+<p class="lead">A chess board in AngularJS, for trying out structure and testing rather than for playing anyone. Each piece is its own module with a matching spec file.</p>
+<p class="body">The first version took five days in November 2013, with commits from “Can move pieces” to a “Self check constraint”. I picked it up again in the summer of 2014. A knight’s moves, for example, are eight offsets that a MatrixTransform helper adds to its position. The log stops at “All regular piece-moves done”; castling and en passant never arrived.</p>
+
+
+
+
+<p class="action"><a href="https://github.com/yngvebn/Chess">View the repository <span aria-hidden="true">→</span></a></p>
+</article><article class="entry entry-compact" id="eventmapper" aria-labelledby="title-eventmapper">
 <h3 id="title-eventmapper">EventMapper</h3>
 <p class="lead">Follows C# references and message routes to show which handler runs when a message is sent. Ordinary call navigation often misses those links.</p>
 
@@ -365,6 +430,15 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 
 <p class="body">Related: <a href="#agent-session-dashboard">the agent-session dashboard (2026)</a>, which records hook events from running agents.</p>
 
+</article><article class="entry entry-compact" id="domify" aria-labelledby="title-domify">
+<p class="meta"><span class="state">No longer maintained</span> · Browser-test library</p><h3 id="title-domify">Selenium.<wbr>Webdriver.<wbr>Domify</h3>
+<p class="lead">A NuGet package that gave Selenium WebDriver a typed DOM in C#. Instead of raw selectors and IWebElement, a test asked the document for a Form, a TextField or a Button, found by helpers such as Find.ByName.</p>
+<p class="body">The API followed the style of WatiN, the older .NET browser-testing library; one class still carries WatiN’s doc comments. Page objects declared their URL with an attribute, so a test could call GoTo&lt;LoginPage&gt;() and check IsAtPage&lt;LoginPage&gt;(). Later versions added waits, finders for Knockout data-bind attributes and an experimental screenshot through html2canvas.</p><p class="body">Most of the work happened between 2013 and 2015, with pull requests from two other developers. The last commit, in 2023, added a note to the top of the README: use Cypress, Playwright or something modern instead.</p>
+
+
+
+
+<p class="action"><a href="https://www.nuget.org/packages/Selenium.Webdriver.Domify/">View on NuGet <span aria-hidden="true">→</span></a></p>
 </article></div></section>
 </div></main>
 <footer class="site-footer"><p>Built and maintained by Yngve Bakken-Nilsen.</p><p><a href="https://github.com/yngvebn">GitHub</a><span class="version">v1.0</span></p></footer></div></body></html>

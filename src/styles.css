@@ -42,7 +42,7 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 .meta{color:var(--muted);margin-bottom:6px}
 .state{font-weight:500}
 .state-running{color:var(--accent)}
-.entry h3{font-size:clamp(32px,3.6vw,50px);font-weight:800;letter-spacing:-.035em;line-height:1}
+.entry h3{font-size:clamp(32px,3.6vw,50px);font-weight:800;letter-spacing:-.035em;line-height:1;overflow-wrap:break-word}
 .entry-compact h3{font-size:clamp(28px,3vw,40px);letter-spacing:-.03em;line-height:1.05}
 .subtitle{margin-top:10px;color:var(--muted)}
 .lead{margin-top:20px;font-size:20px;line-height:1.5}

@@ -7,6 +7,16 @@
     "paragraphs": ["Changing the voice doesn’t mean retiming every cue by hand."]
   },
   {
+    "id": "mavis",
+    "year": 2026,
+    "title": "mavis",
+    "kind": "Agent workbench",
+    "state": "Still running",
+    "lead": "A chat agent that can edit its own code. It started on 16 September 2026 as a Mastra server with a two-pane React page, and it’s now my main tool at work for reviewing pull requests and planning Linear issues.",
+    "paragraphs": ["Each pull request gets its own workspace and worktree. A review runs in three passes: explain the change, find problems, then write a guided tour of the code. Nothing reaches GitHub until I submit it. The repository had 808 commits by 26 October."],
+    "related": { "id": "agent-session-dashboard", "label": "the agent-session dashboard (2026)", "text": "which records hook events from running agents." }
+  },
+  {
     "id": "trmnl",
     "year": 2026,
     "title": "trmnl",
@@ -20,6 +30,15 @@
     "lead": "Records hook events from running agents.",
     "related": { "id": "eventmapper", "label": "EventMapper (2013)", "text": "which follows C# message routes to their handlers." },
     "link": { "label": "View the repository", "url": "https://github.com/yngvebn/agent-session-dashboard" }
+  },
+  {
+    "id": "ng-annotate",
+    "year": 2026,
+    "title": "ng-annotate",
+    "kind": "Angular dev tool",
+    "lead": "Click a component in a running Angular app and type an instruction. An AI agent picks it up over MCP, edits the files and resolves the note, and the browser reloads with the change.",
+    "paragraphs": ["One ng add command sets up the overlay, a dev-server builder and the MCP configuration. The idea comes from agentation.dev. I published 50 versions to npm in the first ten days."],
+    "link": { "label": "View on npm", "url": "https://www.npmjs.com/package/@ng-annotate/angular" }
   },
   {
     "id": "notequest",
@@ -74,6 +93,49 @@
     "link": { "label": "Visit Retrospective.fun", "url": "https://retrospective.fun" }
   },
   {
+    "id": "gitbuddy",
+    "year": 2017,
+    "title": "gitbuddy",
+    "kind": "Pull request bot",
+    "state": "Never deployed",
+    "lead": "A bot for GitHub pull requests. It started as a rule engine that set pass or fail statuses, and ended up taking instructions in pull request comments. It never went online; I ran it locally.",
+    "paragraphs": [
+      "One example rule failed a pull request labelled for master unless it actually targeted master. In April 2018 I added a .NET Core parser for comments such as “@gitbuddy merge this when all checks are green” and “@gitbuddy block this until 1st of april”.",
+      "On 4 April 2018 it merged a pull request in a test repository, with the commit message “Merged by Gitbuddy.io” and the description “Because you told me so”. The history stops the same day."
+    ],
+    "related": { "id": "pull-request-notifications", "label": "Pull Request Notifications (2016)", "text": "which counts open pull requests on the Chrome toolbar." }
+  },
+  {
+    "id": "pull-request-notifications",
+    "year": 2016,
+    "title": "Pull Request Notifications",
+    "kind": "Chrome extension",
+    "state": "Still running",
+    "lead": "Counts open pull requests on the Chrome toolbar and lists them in a popup. I still use it, and so do some of my colleagues.",
+    "paragraphs": [
+      "The repository’s 2016 history is a single day in March. It barely changed after that until August 2025, when I rebuilt it in Angular over two days and moved its polling to Chrome alarms.",
+      "In 2026 the Chrome Web Store removed it after a trademark complaint about the word GitHub in its old name, Github Notifications. It came back as Pull Request Notifications with a new extension ID, so existing users had to install it again."
+    ],
+    "related": { "id": "send-to-chrome", "label": "SendToChrome (2015)", "text": "an earlier Chrome extension that opened links sent from a phone." },
+    "link": { "label": "Install from the Chrome Web Store", "url": "https://chromewebstore.google.com/detail/pull-request-notification/aneamgfghelnopklkcdcocglnkokpmmp" }
+  },
+  {
+    "id": "klassequizen",
+    "year": 2015,
+    "title": "Klassequizen",
+    "lang": "nb",
+    "kind": "Live quiz for NRK",
+    "state": "Ended in 2025",
+    "lead": "The software behind NRK’s TV quiz for tenth-grade classes. Teams answer on their own screens, while scores, clocks and answers go to the broadcast graphics as the round plays out.",
+    "paragraphs": ["The show started in 2013 on an earlier system. I started a rewrite on my own for Aurum in November 2015 and worked on it every year until the show ended in 2025. One of the last commits, in March 2025, is called “curtain call”."],
+    "story": {
+      "summary": "Rehearsing without a studio",
+      "paragraphs": [
+        "A live show can’t be rehearsed whenever you like, so small tools stood in for it. One connected any number of simulated teams that answered at different speeds. Another took the place of the graphics system and showed every message it received. A third replayed the graphics messages from a logged time window."
+      ]
+    }
+  },
+  {
     "id": "send-to-chrome",
     "year": 2015,
     "title": "Getting a link onto another screen",
@@ -89,10 +151,48 @@
     }
   },
   {
+    "id": "organizer",
+    "year": 2014,
+    "title": "Organizer",
+    "kind": "Home media library",
+    "lead": "A web page for the movies and TV shows on my home server. A console app indexed the .nfo files next to each movie and fetched ratings from The Movie Database and show details from TheTVDB.",
+    "paragraphs": ["Posters come in every colour, so the server checked the pixels under each title and chose near-black or near-white text, whichever suited most of them."],
+    "chain": ["git push", "GitHub webhook", "SignalR UpdateHub", "update.ps1 → restart"],
+    "story": {
+      "summary": "How it updated itself",
+      "paragraphs": [
+        "A push to GitHub called a webhook on the web app, which called an UpdateHub on the home server over SignalR. The hub waited five seconds in a loop that watched a Stopwatch, started update.ps1 and exited with code 99. The script pulled the repository, restored NuGet packages, rebuilt with MSBuild, ran the Entity Framework migrations and started the server again.",
+        "The same mechanism appears first in a separate public repository, AutoUpdate: 12 commits between 13:28 and 13:47 UTC on 21 March 2014, most of them called “test” or “Update Program.cs”. Organizer got its webhook that evening."
+      ]
+    }
+  },
+  {
+    "id": "chess",
+    "year": 2013,
+    "title": "Chess",
+    "kind": "Patterns and practices",
+    "lead": "A chess board in AngularJS, for trying out structure and testing rather than for playing anyone. Each piece is its own module with a matching spec file.",
+    "paragraphs": ["The first version took five days in November 2013, with commits from “Can move pieces” to a “Self check constraint”. I picked it up again in the summer of 2014. A knight’s moves, for example, are eight offsets that a MatrixTransform helper adds to its position. The log stops at “All regular piece-moves done”; castling and en passant never arrived."],
+    "link": { "label": "View the repository", "url": "https://github.com/yngvebn/Chess" }
+  },
+  {
     "id": "eventmapper",
     "year": 2013,
     "title": "EventMapper",
     "lead": "Follows C# references and message routes to show which handler runs when a message is sent. Ordinary call navigation often misses those links.",
     "related": { "id": "agent-session-dashboard", "label": "the agent-session dashboard (2026)", "text": "which records hook events from running agents." }
+  },
+  {
+    "id": "domify",
+    "year": 2013,
+    "title": "Selenium.Webdriver.Domify",
+    "kind": "Browser-test library",
+    "state": "No longer maintained",
+    "lead": "A NuGet package that gave Selenium WebDriver a typed DOM in C#. Instead of raw selectors and IWebElement, a test asked the document for a Form, a TextField or a Button, found by helpers such as Find.ByName.",
+    "paragraphs": [
+      "The API followed the style of WatiN, the older .NET browser-testing library; one class still carries WatiN’s doc comments. Page objects declared their URL with an attribute, so a test could call GoTo<LoginPage>() and check IsAtPage<LoginPage>(). Later versions added waits, finders for Knockout data-bind attributes and an experimental screenshot through html2canvas.",
+      "Most of the work happened between 2013 and 2015, with pull requests from two other developers. The last commit, in 2023, added a note to the top of the README: use Cypress, Playwright or something modern instead."
+    ],
+    "link": { "label": "View on NuGet", "url": "https://www.nuget.org/packages/Selenium.Webdriver.Domify/" }
   }
 ]

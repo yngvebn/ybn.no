@@ -66,7 +66,7 @@ async function entry(item, compact) {
   const lang = item.lang ? ` lang="${item.lang}"` : '';
   const related = projects.find((p) => p.id === item.related?.id);
   return `<article class="entry${compact ? ' entry-compact' : ''}" id="${item.id}" aria-labelledby="title-${item.id}">
-${meta ? `<p class="meta">${meta}</p>` : ''}<h3 id="title-${item.id}"${lang}>${escape(item.title)}</h3>
+${meta ? `<p class="meta">${meta}</p>` : ''}<h3 id="title-${item.id}"${lang}>${escape(item.title).replace(/\.(?=\w)/g, '.<wbr>')}</h3>
 ${item.subtitle ? `<p class="subtitle">${escape(item.subtitle)}</p>` : ''}<p class="lead">${escape(item.lead)}</p>
 ${(item.paragraphs ?? []).map((p) => `<p class="body">${escape(p)}</p>`).join('')}
 ${item.chain ? `<ol class="chain">${item.chain.map((step) => `<li>${escape(step)}</li>`).join('')}</ol>` : ''}
