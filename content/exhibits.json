@@ -1,18 +1,16 @@
 [
   {
     "id": "trip-oracle",
-    "number": "01",
     "kind": "A trip, postponed",
     "title": "Er det tid for guttetur?",
     "subtitle": "Is it time for a boys’ trip?",
-    "state": "Preserved",
+    "state": "Archived",
     "period": "2021",
-    "lead": "Seven ways to say “no” became one “Ja!” The answer changed before the random index did.",
-    "storyTitle": "Yes, with an indexing problem.",
+    "lead": "In October 2021 the answer changed to yes, but the code could still pick six empty positions. The fix followed 69 seconds later in the commit history.",
     "paragraphs": [
       "The March 2021 website picked from seven responses to “Is it time for a boys’ trip?” “Nope,” “Helst ikke” and “Kanskje vente til pandemien er over?” gave a fairly consistent answer.",
       "On 27 October, I replaced the list with “Ja!” The code still picked a position from zero to six. There was now an answer at position zero and nothing in the other six.",
-      "The next commit set the index to zero. The recorded commit times are 69 seconds apart. You can inspect the gap below; the larger recreation cycles through the March and October responses."
+      "The next commit set the index to zero. The recorded commit times are 69 seconds apart. The two commits are below. The recreation above switches between the March and October versions."
     ],
     "link": {
       "label": "View the repository",
@@ -28,11 +26,7 @@
         "url": "https://github.com/yngvebn/erdettidforguttetur.no/commit/a291268fe7fd8b0eaae587396f479071955aca51"
       }
     ],
-    "related": [
-      "send-to-chrome"
-    ],
-    "connection": "A one-word answer needed a serverless function. Sending a URL to Chrome took an app, extension, API and messaging service. Follow that route:",
-    "connectionTitle": "Small outputs, several parts",
+    "related": [],
     "history": {
       "changedAt": "2021-10-27T14:35:56Z",
       "fixedAt": "2021-10-27T14:37:05Z",
@@ -43,17 +37,16 @@
   },
   {
     "id": "retrospective",
-    "number": "02",
     "kind": "Team retrospectives",
     "title": "Retrospective.fun",
-    "subtitle": "Every retro remembers the last one.",
-    "state": "Alive",
+    "subtitle": "A retrospective tool that keeps last time’s actions in view.",
+    "state": "Still running",
     "period": "Started in 2017",
     "lead": "A team can agree to change something, then have the same conversation a month later. Retrospective.fun keeps earlier notes and actions within reach.",
     "storyTitle": "Keeping track between meetings",
     "paragraphs": [
       "I started Retrospective.fun in 2017 and still work on it. A retrospective is a meeting about how a team works. The useful part is often what people agree to do afterwards.",
-      "The application keeps those notes and actions available at the next session. Teams can group what people wrote, revisit earlier discussions and choose formats such as Sailboat or Six Thinking Hats, each with its own sequence."
+      "Teams can group what people wrote, revisit earlier discussions and choose formats such as Sailboat or Six Thinking Hats, each with its own sequence."
     ],
     "link": {
       "label": "Visit Retrospective.fun",
@@ -64,17 +57,15 @@
   },
   {
     "id": "notequest",
-    "number": "03",
     "kind": "Learning to read music",
-    "title": "NoteGame → NoteQuest",
+    "title": "NoteGame to NoteQuest",
     "subtitle": "My daughter picked up an idea I’d left unfinished.",
-    "state": "Alive",
+    "state": "Still running",
     "period": "Original experiment: 2023",
     "lead": "I got as far as notes on a staff and a choice of answers. My daughter built NoteQuest from that idea; she develops the game, and I look after the backend and hosting.",
     "storyTitle": "From NoteGame to NoteQuest",
     "paragraphs": [
-      "In 2023, I started NoteGame to practise reading music. It showed a note on a staff and asked you to pick the right answer. I left it unfinished.",
-      "A few years later, my daughter took up the idea and built NoteQuest using AI-assisted development. She develops the game; I provide the backend, hosting and engineering support. You can play her version now."
+      "I started NoteGame in 2023 to practise reading music, and left it unfinished. A few years later my daughter built NoteQuest from it, using AI-assisted development."
     ],
     "link": {
       "label": "Play NoteQuest",

@@ -29,7 +29,7 @@ test('the three exhibits and field note are available before JavaScript runs', (
   assert.match(html, /id="send-to-chrome"/);
   assert.match(html, /https:\/\/retrospective\.fun/);
   assert.match(html, /https:\/\/notequest\.no\//);
-  assert.match(html, /She develops the game/);
+  assert.match(html, /she develops the game/);
   assert.equal((html.match(/<h1\b/g) ?? []).length, 1);
   assert.match(html, /<html lang="en">/);
   assert.match(html, /<link rel="canonical" href="https:\/\/ybn\.no\/">/);
