@@ -33,7 +33,7 @@ Preview locally with any static server, for example `python3 -m http.server 8080
 
 ## Deployment
 
-The nginx base image, port 80 and health check are unchanged. The Dockerfile copies `index.html` and `og.png`. The existing Coolify/GitHub integration deploys the committed artifacts. No Node runtime, build service, database, authentication, analytics or external font requests are needed in production.
+The nginx base image, port 80 and health check are unchanged. The Dockerfile copies `index.html`, `og.png` and the generated application-only `nginx/default.conf`. The build updates the CSP stylesheet hash; commit the configuration together with the HTML. The existing Coolify/GitHub integration deploys the committed artifacts. No Node runtime, build service, database, authentication, analytics or external font requests are needed in production.
 
 ```sh
 docker build -t ybn-no .
@@ -64,3 +64,7 @@ The renderer needs Playwright and Chromium in your authoring environment. `PLAYW
 ## Typography
 
 Schibsted Grotesk (variable, 400–900) and IBM Plex Mono (400, 500) are embedded from the local WOFF2 files in `src/fonts/`, Latin subset, via Fontsource. Their SIL Open Font License notices are next to them. No font request leaves the visitor's browser.
+
+## Security configuration
+
+See [the WebScan follow-up](docs/security-review.md) for header choices, validation and separate proxy/DNS/mail actions. Run `npm run build` after any style change so the enforced CSP hash stays in sync.

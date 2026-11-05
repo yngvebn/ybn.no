@@ -1,5 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import { execFileSync } from 'node:child_process';
 import { fileURLToPath } from 'node:url';
@@ -74,4 +75,19 @@ test('rebuilding does not change the committed deployment artifact', async () =>
   execFileSync(process.execPath, ['scripts/build.mjs'], { cwd: root });
   const again = await readFile(new URL('../index.html', import.meta.url), 'utf8');
   assert.equal(again, html);
+});
+
+test('enforced CSP authorizes only the actual embedded style, with host-only HSTS', async () => {
+  const config = await readFile(new URL('../nginx/default.conf', import.meta.url), 'utf8');
+  const style = html.match(/<style>([\s\S]*?)<\/style>/)[1];
+  const hash = createHash('sha256').update(style).digest('base64');
+  assert.ok(config.includes(`style-src 'sha256-${hash}'`));
+  for (const directive of ["default-src 'none'", "script-src 'none'", "frame-ancestors 'none'", "img-src 'self' data:", "font-src data:"]) assert.ok(config.includes(directive));
+  assert.doesNotMatch(config, /unsafe-inline|unsafe-eval|includeSubDomains;|preload;/);
+  assert.match(config, /server_tokens off;/);
+  assert.match(config, /Strict-Transport-Security "max-age=86400" always;/);
+  for (const header of ['Content-Security-Policy', 'X-Frame-Options', 'X-Content-Type-Options', 'Referrer-Policy', 'Permissions-Policy', 'Cross-Origin-Opener-Policy']) assert.match(config, new RegExp(`add_header ${header} "[^"\\n]+" always;`));
+  assert.doesNotMatch(html, /\sstyle=|\son[a-z]+=/i);
+  execFileSync(process.execPath, ['scripts/build.mjs'], { cwd: root });
+  assert.equal(await readFile(new URL('../nginx/default.conf', import.meta.url), 'utf8'), config);
 });
