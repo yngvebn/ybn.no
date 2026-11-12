@@ -110,7 +110,7 @@ const html = `<!doctype html>
 <div class="timeline" id="projects" aria-label="Projects by year, newest first">
 ${timeline}
 </div></main>
-<footer class="site-footer"><p>Built and maintained by Yngve Bakken-Nilsen.</p><p><a href="https://github.com/yngvebn">GitHub</a><span class="version">${version}</span></p></footer></div></body></html>`;
+<footer class="site-footer"><p>Built and maintained by <a href="https://aurum.no/folk/yngve-bakken-nilsen">Yngve Bakken-Nilsen</a>.<br>I work at <a href="https://aurum.no/">Aurum AS</a>.</p><p><a href="https://github.com/yngvebn">GitHub</a> · <a href="https://www.linkedin.com/in/yngvebn">LinkedIn</a><span class="version">${version}</span></p></footer></div></body></html>`;
 await writeFile(path.join(root, 'index.html'), html);
 // A local checkout may use restrictive permissions; nginx's worker must be
 // able to read the artifact copied by the unchanged Dockerfile.
