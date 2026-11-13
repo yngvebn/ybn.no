@@ -12,6 +12,7 @@ All content lives in `content/projects.json`, one entry per project. The page gr
 | `year` | ✅ | The year the project started. |
 | `title`, `lead` | ✅ | `lang` sets the title's language when it isn't English. |
 | `kind`, `state`, `subtitle` | | Shown above and below the title. `state` is free text; only `Still running` is highlighted. |
+| `featured` | | Use the full-size heading and spacing within a year with several projects. |
 | `paragraphs` | | Extra body text, shown under the lead. |
 | `story` | | `{ summary, paragraphs }`, rendered as a fold-out. |
 | `chain` | | A short list of parts, rendered as boxes; the last box is filled. |

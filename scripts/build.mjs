@@ -82,7 +82,7 @@ const years = [...new Set(projects.map((p) => p.year))].sort((a, b) => b - a);
 const timeline = (await Promise.all(years.map(async (year) => {
   const items = projects.filter((p) => p.year === year);
   const running = items.some((p) => p.state === 'Still running');
-  const entries = await Promise.all(items.map((item) => entry(item, items.length > 1)));
+  const entries = await Promise.all(items.map((item) => entry(item, items.length > 1 && !item.featured)));
   return `<section class="year-row" id="y${year}" aria-labelledby="year-${year}"><h2 class="year${running ? ' year-running' : ''}" id="year-${year}">${year}</h2><div class="entries">${entries.join('')}</div></section>`;
 }))).join('\n');
 

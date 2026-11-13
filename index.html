@@ -288,7 +288,16 @@ h1{font-weight:800;font-size:clamp(48px,8.4vw,116px);line-height:.95;letter-spac
 <div class="page"><header class="site-header"><a class="wordmark" href="#main">ybn.no</a><nav aria-label="Main"><a href="#projects">Projects</a><a href="https://github.com/yngvebn">GitHub</a></nav></header>
 <main id="main"><section class="hero" aria-labelledby="hero-title"><h1 id="hero-title">There’s probably a pattern in here somewhere.</h1><p class="tagline">My personal software projects, from 2013 to now. Some are still running. Most use more infrastructure than they needed.</p></section>
 <div class="timeline" id="projects" aria-label="Projects by year, newest first">
-<section class="year-row" id="y2026" aria-labelledby="year-2026"><h2 class="year year-running" id="year-2026">2026</h2><div class="entries"><article class="entry entry-compact" id="story-video" aria-labelledby="title-story-video">
+<section class="year-row" id="y2026" aria-labelledby="year-2026"><h2 class="year year-running" id="year-2026">2026</h2><div class="entries"><article class="entry" id="family-app" aria-labelledby="title-family-app">
+<p class="meta"><span class="state state-running">Still running</span> · Private family app</p><h3 id="title-family-app">A family week in one place</h3>
+<p class="lead">School plans, the shared calendar, activities and chores each tell us something about the week. I built a family app so we can see them together when we’re working out what needs doing today.</p>
+<p class="body">The school view started with a separate process that turns weekly plans into structured files. The family app reads those files and brings them alongside read-only calendar feeds for family events and activities. Chores are managed in the app itself.</p><p class="body">Each source has its own way in. The school process can keep producing the same files if the family app changes, and calendar events can still be edited where they were created.</p>
+<ol class="chain"><li>School plans, calendars &amp; chores</li><li>Separate imports and app modules</li><li>One family view</li></ol>
+
+<details class="story"><summary>How the app fits together</summary><p>Express serves the installable React app and its API, with PostgreSQL for storage. It runs on a self-hosted Coolify instance.</p><p>Auth0 handles sign-in, and the server limits access to family members. It also checks which school items and chores each person can see.</p></details>
+<p class="body">Related: <a href="#trmnl">trmnl (2026)</a>, another home project that brings independent sources into one view.</p>
+
+</article><article class="entry entry-compact" id="story-video" aria-labelledby="title-story-video">
 <h3 id="title-story-video">story-video</h3>
 <p class="lead">Renders narrated films with captions and visuals timed to the spoken words instead of fixed timestamps.</p>
 <p class="body">Changing the voice doesn’t mean retiming every cue by hand.</p>

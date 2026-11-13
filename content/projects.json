@@ -1,5 +1,35 @@
 [
   {
+    "id": "family-app",
+    "year": 2026,
+    "title": "A family week in one place",
+    "kind": "Private family app",
+    "state": "Still running",
+    "featured": true,
+    "lead": "School plans, the shared calendar, activities and chores each tell us something about the week. I built a family app so we can see them together when we’re working out what needs doing today.",
+    "paragraphs": [
+      "The school view started with a separate process that turns weekly plans into structured files. The family app reads those files and brings them alongside read-only calendar feeds for family events and activities. Chores are managed in the app itself.",
+      "Each source has its own way in. The school process can keep producing the same files if the family app changes, and calendar events can still be edited where they were created."
+    ],
+    "chain": [
+      "School plans, calendars & chores",
+      "Separate imports and app modules",
+      "One family view"
+    ],
+    "story": {
+      "summary": "How the app fits together",
+      "paragraphs": [
+        "Express serves the installable React app and its API, with PostgreSQL for storage. It runs on a self-hosted Coolify instance.",
+        "Auth0 handles sign-in, and the server limits access to family members. It also checks which school items and chores each person can see."
+      ]
+    },
+    "related": {
+      "id": "trmnl",
+      "label": "trmnl (2026)",
+      "text": "another home project that brings independent sources into one view."
+    }
+  },
+  {
     "id": "story-video",
     "year": 2026,
     "title": "story-video",
